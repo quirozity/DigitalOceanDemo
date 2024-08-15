@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World! Here is the time:'
+    return 'Hello World!<br>Here is the time:<br>' + show_time()
+
 def show_time():
     # Get the current time in UTC
     utc_now = datetime.now(pytz.utc)
@@ -16,3 +17,6 @@ def show_time():
     time_str = est_now.strftime('%Y-%m-%d %H:%M:%S %Z%z')
     # Render a simple template displaying the time
     return render_template_string('<h1>Current Time in EST: {{ time }}</h1>', time=time_str)
+
+if __name__ == '__main__':
+    app.run(debug=True)
