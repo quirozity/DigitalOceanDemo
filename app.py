@@ -5,6 +5,8 @@ import pytz
 app = Flask(__name__)
 
 @app.route('/')
+def hello_world():
+    return 'Hello World! Here is the time:'
 def show_time():
     # Get the current time in UTC
     utc_now = datetime.now(pytz.utc)
