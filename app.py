@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!<br>Here is the time:<br>' + show_time()
+    return 'Hello HAPPY FRIDAY!<br>Here is the time:<br>' + show_time()
 
 def show_time():
     # Get the current time in UTC
